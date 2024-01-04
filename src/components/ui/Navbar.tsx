@@ -16,39 +16,39 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
- const variants = {
-   hidden: { opacity: 0 },
-   show: {
-     opacity: 1,
-     transition: {
-       duration: 0.5,
-     },
-   },
- };
+  const variants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
 
- const buttonVariants = {
-   open: {
-     rotate: 180,
-     scale: 1.2,
-     transition: {
-       duration: 0.6,
-     },
-   },
-   closed: {
-     rotate: 0,
-     scale: 1,
-     transition: {
-       duration: 0.6,
-     },
-   },
- };
+  const buttonVariants = {
+    open: {
+      rotate: 180,
+      scale: 1.2,
+      transition: {
+        duration: 0.6,
+      },
+    },
+    closed: {
+      rotate: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+      },
+    },
+  };
 
- const buttonControls = useAnimation();
+  const buttonControls = useAnimation();
 
-   const toggleNavbar = () => {
-     setIsOpen(!isOpen);
-     buttonControls.start(isOpen ? 'closed' : 'open');
-   };
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+    buttonControls.start(isOpen ? 'closed' : 'open');
+  };
 
   return (
     <motion.nav
@@ -75,7 +75,7 @@ const Navbar = () => {
                 className="rounded-full border-2 border-button"
               /> */}
               {/* SubHeading */}
-              <SubHeading title="Ryan Wilson" iconClass="fas fa-person" />
+              <SubHeading title="Score Board" iconClass="fas fa-trophy" />{' '}
             </div>
           </span>
         </Link>
@@ -128,12 +128,12 @@ const Navbar = () => {
         } w-full lg:flex lg:items-center lg:w-auto lg:justify-end`}
       >
         <div className="text-sm lg:flex-grow">
-          <Link href="/projects">
+          <Link href="/scores">
             <span
               onClick={closeNavbar}
               className="block mt-4 lg:inline-block lg:mt-0 text-strokeLight text-xl  hover:underline mr-4 cursor-pointer"
             >
-              <i className="fas fa-cogs mr-2"></i>Projects{' '}
+              <i className="fas fa-trophy mr-2"></i>Scores{' '}
             </span>
           </Link>
           <Link href="/about">
@@ -141,7 +141,7 @@ const Navbar = () => {
               onClick={closeNavbar}
               className="block mt-4 lg:inline-block lg:mt-0 text-strokeLight text-xl  hover:underline mr-4 cursor-pointer"
             >
-              <i className="fas fa-info mr-2"></i>About Me
+              <i className="fas fa-info mr-2"></i>About
             </span>
           </Link>
           <Link href="/feedback">
